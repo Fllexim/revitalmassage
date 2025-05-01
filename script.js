@@ -1,3 +1,49 @@
+//----------Слайдер---------
+let currentSlide = 0; // Текущий слайд
+const slides = document.querySelectorAll('.slide'); // Все слайды
+const indicators = document.querySelectorAll('.indicator'); // Индикаторы
+
+// Функция для отображения текущего слайда
+function showSlide(index) {
+  // Если индекс выходит за пределы, возвращаем в начало/конец
+  if (index < 0) {
+    currentSlide = slides.length - 1;
+} else if (index >= slides.length) {
+    currentSlide = 0;
+} else {
+    currentSlide = index;
+}
+
+  // Убираем класс 'active' у всех слайдов
+  slides.forEach((slide) => {
+    slide.classList.remove('active');
+});
+
+  // Добавляем класс 'active' к текущему слайду
+  slides[currentSlide].classList.add('active');
+
+  // Обновляем индикаторы
+  indicators.forEach((indicator, i) => {
+    if (i === currentSlide) {
+      indicator.classList.add('active');
+  } else {
+      indicator.classList.remove('active');
+  }
+});
+}
+
+// Автоматическое переключение слайдов
+function startAutoSlide() {
+  setInterval(() => {
+    showSlide(currentSlide + 1);
+  }, 4500); // Переключение каждые 5 секунд
+}
+
+// Инициализация слайдера
+showSlide(currentSlide);
+startAutoSlide(); // Запуск автоматического переключения
+
+//Модалка
 function openModal() {
   const modal = document.getElementById("modal");
 
@@ -152,47 +198,3 @@ function showSuccessPopup() {
 }
 
 
-//----------Слайдер---------
-let currentSlide = 0; // Текущий слайд
-const slides = document.querySelectorAll('.slide'); // Все слайды
-const indicators = document.querySelectorAll('.indicator'); // Индикаторы
-
-// Функция для отображения текущего слайда
-function showSlide(index) {
-  // Если индекс выходит за пределы, возвращаем в начало/конец
-  if (index < 0) {
-    currentSlide = slides.length - 1;
-} else if (index >= slides.length) {
-    currentSlide = 0;
-} else {
-    currentSlide = index;
-}
-
-  // Убираем класс 'active' у всех слайдов
-  slides.forEach((slide) => {
-    slide.classList.remove('active');
-});
-
-  // Добавляем класс 'active' к текущему слайду
-  slides[currentSlide].classList.add('active');
-
-  // Обновляем индикаторы
-  indicators.forEach((indicator, i) => {
-    if (i === currentSlide) {
-      indicator.classList.add('active');
-  } else {
-      indicator.classList.remove('active');
-  }
-});
-}
-
-// Автоматическое переключение слайдов
-function startAutoSlide() {
-  setInterval(() => {
-    showSlide(currentSlide + 1);
-  }, 4500); // Переключение каждые 5 секунд
-}
-
-// Инициализация слайдера
-showSlide(currentSlide);
-startAutoSlide(); // Запуск автоматического переключения
