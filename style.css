@@ -1,24 +1,24 @@
 @font-face {
   font-family: "IBMPlexSerif-Light";
-  src: url("../fonts/IBMPlexSerif-Light.ttf") format("truetype");
+  src: url("fonts/IBMPlexSerif-Light.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Lekton-Regular";
-  src: url("../fonts/Lekton-Regular.ttf") format("truetype");   
+  src: url("fonts/Lekton-Regular.ttf") format("truetype");   
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "IBMPlexSerif-ExtraLight";
-  src: url("../fonts/IBMPlexSerif-ExtraLight.ttf") format("truetype");   
+  src: url("fonts/IBMPlexSerif-ExtraLight.ttf") format("truetype");   
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "RussoOne-Regular";
-  src: url("../fonts/RussoOne-Regular.ttf") format("truetype");   
+  src: url("fonts/RussoOne-Regular.ttf") format("truetype");   
   font-weight: normal;
   font-style: normal;
 }
