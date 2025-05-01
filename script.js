@@ -162,39 +162,5 @@ function outsideModalCertifClickListener(event) {
   }
 }
 
-// ======= Отправка формы сертификата с popup =======
-
-document.getElementById("certifForm").addEventListener("submit", function (e) {
-  e.preventDefault(); // отключаем перезагрузку
-
-  const formData = new FormData(this);
-
-  fetch("telegram-send.php", {
-    method: "POST",
-    body: formData
-  })
-  .then(res => res.text())
-  .then(response => {
-    if (response === "ok") {
-      showSuccessPopup();
-      this.reset();
-      closeModalCertif();
-    } else {
-      alert("Помилка при відправці.");
-    }
-  })
-  .catch(() => alert("Помилка з’єднання з сервером."));
-});
-
-function showSuccessPopup() {
-  const popup = document.getElementById("successPopup");
-  popup.classList.remove("hidden");
-  popup.classList.add("active");
-
-  setTimeout(() => {
-    popup.classList.remove("active");
-    popup.classList.add("hidden");
-  }, 5000);
-}
 
 
