@@ -1,0 +1,64 @@
+<header>
+	<span class="space"></span>
+	<div class="container">
+		<div class="logo">
+			<a href="https://revital-massage.local/">
+				<img src="images/logo.jpg" alt="Логотип">
+			</a>         
+		</div>
+		<div class="side-nav">
+			<nav>
+				<ul class="nav-links">
+					<li><a href="index.html#main-name">Види масажу</a></li>
+					<li><a href="page-price.html">Ціни</a></li>
+					<li><a href="page-certificate.html">Сертифікати</a></li>
+					<li><a href="page-promotions.html">Акції</a></li>
+					<li><a href="page-blog.html">Блог</a></li>
+					<li><a href="page-contacts.html">Контакти</a></li>
+				</ul>
+			</nav>
+		</div>
+		<aside class="mob-sidebar" id="mobSidebar">
+			<button class="close-btn" id="close-btn" onclick="closeSidebar()">&times;</button>
+			<div class="side-logo-name">Revital Massage</div>
+			<nav>
+				<ul class="mob-side-links">
+					<a href="index.html#main-name"><li>Види масажу</li></a>
+					<a href="page-price.html"><li>Ціни</li></a>
+					<a href="page-certificate.html"><li>Сертифікати</li></a>
+					<a href="page-promotions.html"><li>Акції</li></a>
+					<a href="page-blog.html"><li>Блог</li></a>
+					<a href="page-contacts.html"><li>Контакти</li></a>
+				</ul>
+			</nav>
+		</aside>
+		<button class="btn-appointment" onclick="openModal()">Записатись онлайн</button>
+		<div class="burger" id="burger" onclick="openSidebar()">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+	<div id="modalOverlay" class="overlay hidden"></div>
+
+	<div id="modal" class="modal">
+		
+		<div class="modal-top-blur"></div>
+		<div class="modal-content">
+			<span class="close-modal" id="close-modal" onclick="closeModal()">&times;</span>
+			<h2 class="modal-name">Залишити заявку</h2>
+			<form class="form-call" action="telegram-send.php" method="POST">
+				
+				<input placeholder="Ваше Ім'я *" class="input-form" type="text" id="name" name="name" required>
+
+				<input placeholder="Ваш телефон *" class="input-form" type="tel" id="phone" name="phone" required>
+
+				<textarea placeholder="Ваш коментарій *" class="input-form" id="comment" name="comment"></textarea>
+
+				<input type="hidden" name="form_source" value="main_modal">
+
+				<button class="submit" type="submit">Надіслати →</button>
+			</form>
+		</div>
+	</div>
+</header>

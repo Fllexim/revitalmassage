@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Revital Massage</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" type="image/png" href="images/favicon-32x32.png">
+</head>
+<body>
+	<div id="header"></div>
+	<div class="background-cert"></div>
+	<h3 class="section-name cert-name">Подарунковий сертифікат</h3>
+	<div class="title-text-cert">Сертифікати в картонному вигляді можна придбати з 9:00 до 20:00; якщо потрібен інший час - зателефонуйте й повідомте зручний для вас час нашим адміністраторам.</div>
+	<main>
+		<div class="adaptive-block">
+			<div class="block-image">
+				<img src="images/cert-1.jpg" alt="Фото" />
+			</div>
+			<div class="block-content">
+				<h2>Подарунковий персональний сертифікат</h2>
+				<p>«Персональний» - цей сертифікат на одну або декілька з послуг, або навіть абонемент чи депозит, якщо ви точно знаєте, який вид масажу хочете подарувати. Зі списку виберіть назву послуги та надішліть нам заявку онлайн. Ми опрацюємо її і зв'яжемося з вами. Картонний сертифікат можна придбати на студії. Оплата можлива переказом на реквізити iban. Якщо ви хочете зробити масаж в подарунок, будь ласка, ознайомтеся з усіма видами масажу. Ми зробили максимально зручні умови для вас.</p>
+				<button onclick="openModalCertif()" class="btn-main">Замовити сертифікат</button>
+			</div>
+		</div>
+	</main>		
+	<div id="modalCertif" class="modal-2">
+		<div class="modal-content-2">
+			<span class="close-modal-2" id="close-modal-2" onclick="closeModalCertif()">&times;</span>
+			<h2 class="modal-name-2">Залишити заявку</h2>
+			<form class="form-call-2" action="telegram-send.php" method="POST">
+				
+				<!-- Имя и телефон -->
+				<div class="line-inputs">
+					<input placeholder="Ваше Ім'я *" class="input-form-2" type="text" id="name-2" name="name" required>
+					<input placeholder="Ваш телефон *" class="input-form-2" type="tel" id="phone-2" name="phone" required>
+				</div>
+
+				<!-- Выбор сервиса -->
+				<select name="service" class="form-select" required>
+					<option value="">Оберіть масаж</option>
+					<option value="Шведський масаж">Шведський масаж - 500 грн</option>
+					<option value="Тайський масаж">Тайський масаж - 600 грн</option>
+					<option value="Грецький масаж">Грецький масаж - 700 грн</option>
+					<option value="Гавайський масаж">Гавайський масаж - 1200 грн</option>
+					<option value="Іспанський масаж обличчя">Іспанський масаж обличчя - 500 грн</option>
+					<option value="Карабський релакс масаж">Карабський релакс масаж - 800 грн</option>
+					<option value="Філіппінський масаж">Філіппінський масаж - 600 грн</option>
+				</select>
+
+				<!-- Комментарий -->
+				<textarea placeholder="Ваш коментарій *" class="area-input" id="comment-2" name="comment"></textarea>
+
+				<!-- Скрытое поле для определения источника формы -->
+				<input type="hidden" name="form_source" value="certificate">
+
+				<!-- Кнопка отправки -->
+				<button class="submit-2" type="submit">Надіслати →</button>
+			</form>
+		</div>
+	</div>
+
+	<div id="footer"></div>
+	<script src="footer.js"></script>
+	<script src="header.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
