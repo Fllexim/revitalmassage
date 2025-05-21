@@ -1442,7 +1442,6 @@ footer {
     height: auto; /* убираем фиксированную высоту */
   }
   .contacts-map {
-    min-height: 180px; /* можно меньше на маленьких экранах */
     width: 100%;
   }
   .contact-row {
