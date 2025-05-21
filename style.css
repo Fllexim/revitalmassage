@@ -1405,8 +1405,7 @@ footer {
 
 
 .contacts-map {
-  flex: 1 1 400px;
-  min-height: 300px;
+  height
 }
 
 .contacts-map iframe {
@@ -1442,6 +1441,7 @@ footer {
     height: auto; /* убираем фиксированную высоту */
   }
   .contacts-map {
+    height: 300px;
     width: 100%;
   }
   .contact-row {
